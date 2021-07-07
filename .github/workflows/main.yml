@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-   steps:
+    steps:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
@@ -30,4 +30,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: cd /var/www/html;
-                  git pull;
+            git pull;
