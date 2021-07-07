@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: cd /var/www/html;
+          script: cd /var/www/html/src/prod/;
             git pull;
