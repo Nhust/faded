@@ -28,6 +28,6 @@ jobs:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{secret.SSH_KEY}}
+          key: ${{secrets.SSH_KEY}}
           script: cd /var/www/html/src/prod/;
                   git pull;
