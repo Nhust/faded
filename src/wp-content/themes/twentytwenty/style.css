@@ -688,6 +688,10 @@ video {
     margin-top:50px;
     background:rgb(21,21,21);
     padding:25px 50px;
+    /*clear: both;*/
+    position: relative;
+    height: 200px;
+    width: 100%;
 }
 #site-footer li{
     list-style: none;
@@ -703,4 +707,12 @@ video {
 }
 .footer-link{
     padding:0px 20px;
+}
+.catch-text{
+    text-align: center;
+    width:1080px;
+    margin:0 auto;
+    padding:50px;
+    color:rgb(102, 102, 102);
+
 }
