@@ -172,7 +172,7 @@ form > button[type="submit"] {
 }
 
 .import-btn a {
-    color: #585858;
+    color: #fff;
 }
 
 
@@ -230,7 +230,7 @@ form > button[type="submit"] {
 }
 
 .nav-container li {
-    width: 120px;
+    width: 140px;
     padding: 12px 0px 14px 0px;
     list-style: none;
     color: #fff;
@@ -251,6 +251,7 @@ form > button[type="submit"] {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 0px;
     border-bottom: 0px;
+    background:#191919;
 }
 
 /** END NAV **/
@@ -724,4 +725,24 @@ body{
 
 #site-footer{
     margin-top:auto;
+}
+.import-btn a:hover{
+    color: #fff;
+}
+.premium-btn a:hover{
+    color:#000;
+}
+
+
+.menu-item{
+    position: relative;
+}
+li.menu-item.active::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    background: #f29d38;
+    width: 100%;
+    height: 3px;
 }
