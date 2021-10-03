@@ -18,9 +18,6 @@ src/xmlrpc.php
 # Configuration
 src/wp-config.php
 
-# Example themes
-src/wp-content/themes/twenty*/
-
 # Example plugin
 src/wp-content/plugins/hello.php
 
