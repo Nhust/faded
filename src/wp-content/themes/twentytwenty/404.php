@@ -15,7 +15,7 @@ get_header();
 	<div class="section-inner ">
 
 
-    <h1>404 <br>404 </h1>
+    <h1>404</h1>
 
 
 	</div><!-- .section-inner -->
