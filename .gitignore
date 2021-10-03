@@ -30,15 +30,5 @@ src/wp-content/uploads/
 # htaccess
 src/.htaccess
 
-# All plugins
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#src/wp-content/plugins
-
-# All themes
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#src/wp-content/themes
-
 */.DS_Store
 */.idea
