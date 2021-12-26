@@ -61,12 +61,7 @@ wp_body_open();
 
 
                 <?php
-                // Site title or logo.
                 twentytwenty_site_logo();
-
-                // Site description.
-
-
                 ?>
 
                 <div id="my-nav-icon">
