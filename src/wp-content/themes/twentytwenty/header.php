@@ -89,7 +89,6 @@ glyphicon glyphicon-arrow-up"> </span>Importer </a></div>
 
     </div>
     <div class="nav-container main-nav">
-        <!--                    <li><a href="">Accueil</a><div class="bottom-line"></div></li>-->
         <?php
         wp_nav_menu(array('menu' => 'nav', 'menu_class' => 'container'))
         ?>
