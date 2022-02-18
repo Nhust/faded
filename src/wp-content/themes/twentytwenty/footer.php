@@ -25,6 +25,7 @@
 
 
 </div>
+</div>
 <footer id="site-footer" role="contentinfo" class="header-footer-group">
 
     <div class="section-inner container">
