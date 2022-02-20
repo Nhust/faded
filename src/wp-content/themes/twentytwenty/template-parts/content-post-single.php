@@ -68,6 +68,13 @@ $like_value = $wpdb->get_row('SELECT * FROM ' . $wpdb->prefix . 'like where post
             $custom_query->the_post();
             $id = get_the_ID();
             $img_src = get_the_post_thumbnail_url($id);
+            $youtube = get_post_meta($id, 'youtube_url', true);
+            if ($youtube) {
+                $youtube = str_replace('https://www.youtube.com/embed/', '', $youtube);
+                $img_src = 'https://i1.ytimg.com/vi/' . $youtube . '/sddefault.jpg';
+
+            }
+
             ?>
 
             <div class="col-md-4 col-xs-10 col-xs-push-1 col-md-push-0">
