@@ -7,37 +7,51 @@
  * @since Twenty Twenty 1.0
  */
 
-if ( has_post_thumbnail() && ! post_password_required() ) {
+if (has_post_thumbnail() && !post_password_required()) {
 
-	$featured_media_inner_classes = '';
+    $featured_media_inner_classes = '';
 
-	// Make the featured media thinner on archive pages.
-	if ( ! is_singular() ) {
-		$featured_media_inner_classes .= ' medium';
-	}
-	?>
+    // Make the featured media thinner on archive pages.
+    if (!is_singular()) {
+        $featured_media_inner_classes .= ' medium';
+    }
+    $id = get_the_ID();
+    $youtube = get_post_meta($id, 'youtube_url', true);
+    if ($youtube) {
+        $youtube = str_replace('https://www.youtube.com/embed/', '', $youtube);
+        $youtube_thumbnail = 'https://i1.ytimg.com/vi/' . $youtube . '/sddefault.jpg';
 
-	<figure class="featured-media">
+    }
+    ?>
 
-		<div class="featured-media-inner section-inner<?php echo $featured_media_inner_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
 
-			<?php
-			    the_post_thumbnail('large');
+    <figure class="featured-media">
 
-			$caption = get_the_post_thumbnail_caption();
+        <div class="featured-media-inner section-inner<?php echo $featured_media_inner_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
 
-			if ( $caption ) {
-				?>
+            <?php
+            if ($youtube) {
+                ?>
+                <img src="<?php echo $youtube_thumbnail ?>" alt="" style="width:100%">
+                <?php
+            } else {
+                the_post_thumbnail('large');
+            }
 
-				<figcaption class="wp-caption-text"><?php echo esc_html( $caption ); ?></figcaption>
+            $caption = get_the_post_thumbnail_caption();
 
-				<?php
-			}
-			?>
+            if ($caption) {
+                ?>
 
-		</div><!-- .featured-media-inner -->
+                <figcaption class="wp-caption-text"><?php echo esc_html($youtube_thumbnail); ?></figcaption>
 
-	</figure><!-- .featured-media -->
+                <?php
+            }
+            ?>
 
-	<?php
+        </div><!-- .featured-media-inner -->
+
+    </figure><!-- .featured-media -->
+
+    <?php
 }

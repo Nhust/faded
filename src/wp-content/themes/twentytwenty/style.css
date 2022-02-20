@@ -262,8 +262,9 @@ form > button[type="submit"] {
 }
 
 .featured-media img {
+
     width: 100%;
-    height: 140px;
+    height: 100%;
 }
 
 .featured-media img:hover, .title:hover {
@@ -370,7 +371,7 @@ form > button[type="submit"] {
     top: 10px;
 }
 
-video {
+video,iframe {
     margin-top: 24px;
     width: 100% !important;
     object-fit: contain;
