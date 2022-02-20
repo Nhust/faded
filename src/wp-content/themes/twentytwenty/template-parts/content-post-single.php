@@ -1,6 +1,8 @@
 <?php
 $id = get_the_ID();
 $video = get_post_meta($id, 'my_video', true);
+$youtube = get_post_meta($id,'youtube_url',true);
+
 global $wpdb;
 
 $likes = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'like where post_id = ' . $id . '  AND value="1" ');
@@ -13,11 +15,20 @@ $like_value = $wpdb->get_row('SELECT * FROM ' . $wpdb->prefix . 'like where post
 ?>
 
 <div class="video-container col-md-9">
+    <?php
+    if($youtube){?>
+
+        <iframe  height="315" src="<?php echo $youtube ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <?php }else{
+    ?>
+
     <video controls>
-
         <source src="<?php echo $video ?>" type="video/mp4">
-
     </video>
+    <?php
+        }
+    ?>
     <div class="title-container">
         <p><?php
             the_title(); ?>

@@ -810,6 +810,11 @@ class VideoMetabox
             'returnvalue' => 'url',
             'type' => 'media',
         ),
+        array(
+            'label' => 'Url',
+            'id' => 'youtube_url',
+            'type' => 'text',
+        )
     );
 
     public function __construct()
@@ -844,6 +849,7 @@ class VideoMetabox
         ?>
         <script>
             jQuery(document).ready(function ($) {
+
                 if (typeof wp.media !== 'undefined') {
                     var _custom_media = true,
                         _orig_send_attachment = wp.media.editor.send.attachment;
@@ -853,6 +859,7 @@ class VideoMetabox
                         var id = button.attr('id').replace('_button', '');
                         _custom_media = true;
                         wp.media.editor.send.attachment = function (props, attachment) {
+
                             if (_custom_media) {
                                 if ($('input#' + id).data('return') == 'url') {
                                     $('input#' + id).val(attachment.url);
@@ -866,6 +873,7 @@ class VideoMetabox
                             ;
                         }
                         wp.media.editor.open(button);
+
                         return false;
                     });
                     $('.add_media').on('click', function () {
@@ -1049,6 +1057,7 @@ class newMetabox
             'id' => 'key',
             'type' => 'text',
         ),
+
     );
 
     public function __construct()

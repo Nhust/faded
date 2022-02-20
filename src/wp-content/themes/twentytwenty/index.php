@@ -122,11 +122,12 @@ get_header();
 
                             ?>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-xs-12">
                                 <?php
                                 get_template_part('template-parts/content', get_post_type());
                                 ?>
                             </div>
+
 
 
                             <?php
