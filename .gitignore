@@ -30,5 +30,5 @@ src/wp-content/uploads/
 # htaccess
 src/.htaccess
 
-*/.DS_Store
-*/.idea
+*.DS_Store
+*.idea
