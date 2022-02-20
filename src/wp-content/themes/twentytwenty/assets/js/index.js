@@ -907,7 +907,7 @@ jQuery(document).ready(function ($) {
     })
 
     $('.modal-cta').on('click', function () {
-        document.cookie = 'modal=1;domain=faded.fr;path=/'; //Crée ou met à jour un cookie 'user'
+        document.cookie = 'modal=1;domain='+domain+';path=/'; //Crée ou met à jour un cookie 'user'
         $('.custom-modal').css('display', 'none');
         $('body').removeClass('is-new-user');
     })

@@ -1296,3 +1296,9 @@ function special_nav_class($classes, $item){
     }
     return $classes;
 }
+function get_domain(){
+    echo '<script>
+        var domain = "'.$_SERVER["SERVER_NAME"].'";
+    </script>';
+}
+get_domain();
