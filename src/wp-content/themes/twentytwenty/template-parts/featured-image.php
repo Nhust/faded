@@ -7,7 +7,10 @@
  * @since Twenty Twenty 1.0
  */
 
-if (has_post_thumbnail() && !post_password_required()) {
+$id = get_the_ID();
+$youtube = get_post_meta($id, 'youtube_url', true);
+
+if (has_post_thumbnail() && !post_password_required() || $youtube ){
 
     $featured_media_inner_classes = '';
 
@@ -15,8 +18,7 @@ if (has_post_thumbnail() && !post_password_required()) {
     if (!is_singular()) {
         $featured_media_inner_classes .= ' medium';
     }
-    $id = get_the_ID();
-    $youtube = get_post_meta($id, 'youtube_url', true);
+
     if ($youtube) {
         $youtube = str_replace('https://www.youtube.com/embed/', '', $youtube);
         $youtube_thumbnail = 'https://i1.ytimg.com/vi/' . $youtube . '/sddefault.jpg';
